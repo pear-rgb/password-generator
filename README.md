@@ -4,7 +4,6 @@
 This program, written in Python, generates a password. The program only needs the desired length.
 
 ## Install
-
 ### Windows
 * Download the archive.
 * Extract it.
@@ -17,7 +16,7 @@ cd password-generator
 python3 password-generator.py
 ```
 
-# Requirements
+## Requirements
 * Python 3.9+
 
 ## Disclaimer
