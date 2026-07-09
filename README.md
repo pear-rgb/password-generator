@@ -1,7 +1,7 @@
 # Password generator
 
 ## About
-This program, written in Python, generates a password. The program only needs the desired length.
+A password generation program that allows for the customization of the character set and password length. The program prompts the user for character set parameters (requiring the user to enter digits corresponding to the selected options) and the desired password length.
 
 ## Install
 ### Windows
