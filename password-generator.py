@@ -15,10 +15,11 @@ def menu():
     print('Config:')
     print('1. ABC...\n2. abc...\n3. 123...\n4. !@#$...')
 
-    while type(config) != int:
+    while True:
         config = input('Enter the numbers without spaces: ')
         if config.isnumeric() and '1' in config or '2' in config or '3' in config or '4' in config:
             config = int(config)
+            break
     
     config = list(str(config))
 
