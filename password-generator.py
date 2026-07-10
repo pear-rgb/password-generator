@@ -27,10 +27,11 @@ def menu():
     if '3' in config: alphabet += digits
     if '4' in config: alphabet += '!=+~-_#*()[]?$@^'
 
-    while type(length) != int:
+    while True:
         length = input('Length: ')
-        if length.isnumeric():
+        if length.isnumeric() and int(length) > 0:
             length = int(length)
+            break
 
     return length, alphabet
 
