@@ -17,7 +17,7 @@ def menu():
 
     while type(config) != int:
         config = input('Enter the numbers without spaces: ')
-        if config.isnumeric():
+        if config.isnumeric() and '1' in config or '2' in config or '3' in config or '4' in config:
             config = int(config)
     
     config = list(str(config))
