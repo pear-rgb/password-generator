@@ -20,7 +20,7 @@ def menu():
         if len(config) != 0 and all(i in '1234' for i in config):
             break
     
-    config = list(str(config))
+    config = list(config)
 
     if '1' in config: alphabet += ascii_uppercase
     if '2' in config: alphabet += ascii_lowercase
