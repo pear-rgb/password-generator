@@ -2,6 +2,7 @@ from secrets import choice
 from string import ascii_lowercase, ascii_uppercase, digits
 
 VERSION = "1.3"
+LIMIT = 256
 
 def menu():
     
@@ -31,7 +32,12 @@ def menu():
         length = input('Length: ')
         if length.isnumeric() and int(length) > 0:
             length = int(length)
-            break
+            if length > LIMIT:
+                print('Excessive length may overload the device.\nType "I understand" to ignore this.')
+                if input().strip().lower() == 'i understand':
+                    break
+            else:
+                break
 
     return length, alphabet
 
