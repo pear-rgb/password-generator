@@ -26,7 +26,7 @@ def menu():
     if '1' in config: alphabet += ascii_uppercase
     if '2' in config: alphabet += ascii_lowercase
     if '3' in config: alphabet += digits
-    if '4' in config: alphabet += '!=+~-_#*()[]?$@^'
+    if '4' in config: alphabet += '!=+~-_#*()[]<>?$@^&'
 
     while True:
         length = input('Length: ')
