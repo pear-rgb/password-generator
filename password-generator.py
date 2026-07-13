@@ -19,7 +19,12 @@ def menu():
     while True:
         config = input('Enter the numbers (1-4) without spaces: ')
         if len(config) != 0 and all(i in '1234' for i in config):
-            break
+            if len(''.join(dict.fromkeys(config))) > 2:
+                break
+            else:
+                print('The password has a small character set, making it insecure.\nType "I understand" to ignore this.')
+                if input().strip().lower() == 'i understand':
+                    break
     
     config = list(config)
 
