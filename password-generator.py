@@ -1,7 +1,7 @@
 from secrets import choice
 from string import ascii_lowercase, ascii_uppercase, digits
 
-VERSION = "1.4"
+VERSION = "1.5"
 LIMIT = 256
 
 def menu():
