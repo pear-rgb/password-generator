@@ -1,7 +1,7 @@
 from secrets import choice
 from string import ascii_lowercase, ascii_uppercase, digits
 
-VERSION = "1.5"
+VERSION = "1.6"
 MAX_LIMIT = 256
 MIN_LIMIT = 12
 
