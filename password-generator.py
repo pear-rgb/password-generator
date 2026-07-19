@@ -3,6 +3,7 @@ from string import ascii_lowercase, ascii_uppercase, digits
 
 VERSION = "1.5"
 MAX_LIMIT = 256
+MIN_LIMIT = 12
 
 def menu():
     
@@ -42,7 +43,12 @@ def menu():
                 if input().strip().lower() == 'i understand':
                     break
             else:
-                break
+                if MIN_LIMIT > length:
+                    print('A short password length is highly insecure.\nType "I understand" to ignore this.')
+                    if input().strip().lower() == 'i understand':
+                        break
+                else:
+                    break
 
     return length, alphabet
 
