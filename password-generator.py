@@ -37,11 +37,14 @@ def menu():
         length = input('Length: ')
         if length.isnumeric() and int(length) > 0:
             length = int(length)
-            if length > MAX_LIMIT and warning('Excessive length may overload the device.'):
+            if length > MAX_LIMIT:
+                if warning('Excessive length may overload the device.'):
+                    break
+            elif MIN_LIMIT > length:
+                if warning('A short password length is highly insecure.'):
+                    break
+            else:
                 break
-            if MIN_LIMIT > length and warning('A short password length is highly insecure.'):
-                break
-            break
 
     return length, alphabet
 
