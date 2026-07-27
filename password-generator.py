@@ -49,11 +49,7 @@ def menu():
     return length, alphabet
 
 def generator(length, alphabet):
-    password = ''
-    for _ in range(length):
-        password += choice(alphabet)
-
-    return password
+    return ''.join(choice(alphabet) for _ in range(length))
 
 def warning(text):
     print(text + '\nType "I understand" to ignore this.')
