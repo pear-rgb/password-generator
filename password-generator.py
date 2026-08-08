@@ -59,6 +59,9 @@ def warning(text):
         return False
 
 if __name__ == "__main__":
-    data = menu()
-    print(generator(data[0], data[1]))
-    input('Press enter to close')
+    try:
+        data = menu()
+        print(generator(data[0], data[1]))
+        input('Press enter to close')
+    except (KeyboardInterrupt, EOFError):
+        print('\nCancelled.')
