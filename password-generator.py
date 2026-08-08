@@ -58,6 +58,7 @@ def warning(text):
     else:
         return False
 
-data = menu()
-print(generator(data[0], data[1]))
-input('Press enter to close')
+if __name__ == "__main__":
+    data = menu()
+    print(generator(data[0], data[1]))
+    input('Press enter to close')
