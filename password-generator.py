@@ -1,5 +1,7 @@
-from secrets import choice
+from secrets import choice, SystemRandom
 from string import ascii_lowercase, ascii_uppercase, digits
+
+_random = SystemRandom()
 
 VERSION = "1.7"
 MAX_LIMIT = 256
@@ -9,7 +11,7 @@ def menu():
     
     length = ''
     config = ''
-    alphabet = ''
+    charsets = []
     
     print('----------------------')
     print('Password generator ' + VERSION)
@@ -28,10 +30,10 @@ def menu():
     
     config = list(config)
 
-    if '1' in config: alphabet += ascii_uppercase
-    if '2' in config: alphabet += ascii_lowercase
-    if '3' in config: alphabet += digits
-    if '4' in config: alphabet += """!=+~-_#*()[]<>?$@^&.,:;'"/|\\"""
+    if '1' in config: charsets.append(ascii_uppercase)
+    if '2' in config: charsets.append(ascii_lowercase)
+    if '3' in config: charsets.append(digits)
+    if '4' in config: charsets.append("""!=+~-_#*()[]<>?$@^&.,:;'"/|\\""")
 
     while True:
         length = input('Length: ')
@@ -46,10 +48,14 @@ def menu():
             else:
                 break
 
-    return length, alphabet
+    return length, charsets
 
-def generator(length, alphabet):
-    return ''.join(choice(alphabet) for _ in range(length))
+def generator(length, charsets):
+    alphabet = ''.join(charsets)
+    password = [choice(cs) for cs in charsets]
+    password += [choice(alphabet) for _ in range(length - len(charsets))]
+    _random.shuffle(password)
+    return ''.join(password)
 
 def warning(text):
     print(text + '\nType "I understand" to ignore this.')
