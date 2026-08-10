@@ -3,7 +3,7 @@ from string import ascii_lowercase, ascii_uppercase, digits
 
 _random = SystemRandom()
 
-VERSION = "1.7"
+VERSION = "1.8"
 MAX_LIMIT = 256
 MIN_LIMIT = 12
 
